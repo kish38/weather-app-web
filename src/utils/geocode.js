@@ -1,6 +1,11 @@
 const request = require('request')
 
 const geocode = (creds, address, callback) =>{
+    return callback(undefined, {
+        latitude: 37.8267,
+        longitude: -122.4233,
+        location: "Ind"
+    })
     
     const geocode_url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token='+creds.geo_api_key+'&limit=1'
     request({url: geocode_url, json: true}, (error, {body}) => {
